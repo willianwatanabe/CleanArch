@@ -15,7 +15,7 @@ namespace CleanArch.Domain.Tests
         }
 
         [Fact(DisplayName = "Throw Domain Exception Validation With Negative Value")]
-        public void CreateCategory_NegativeIdValue_DomainExceptionValidation()
+        public void CreateCategory_NegativeIdValue_DomainExceptionValidation() 
         {
             Action action = () => new Category(-1, "Category Name");
 
