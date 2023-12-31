@@ -19,8 +19,8 @@ namespace CleanArch.Infra.Data.EntitiesConfiguration
 
             builder.HasData(
                 new Category(1, "Material Escolar"),
-                new Category(2, "Material Escolar"),
-                new Category(3, "Material Escolar")
+                new Category(2, "Eletronicos"),
+                new Category(3, "Acessorios")
                 );
         }
     }
