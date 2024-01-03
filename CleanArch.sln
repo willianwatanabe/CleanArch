@@ -13,7 +13,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Infra.Data", "Cle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Infra.IoC", "CleanArch.Infra.IoC\CleanArch.Infra.IoC.csproj", "{3B41209E-3886-46E1-8552-88078EC91574}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArch.Domain.Tests", "CleanArch.Domain.Tests\CleanArch.Domain.Tests.csproj", "{297FD570-4186-426C-B094-753A99950200}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArch.Domain.Tests", "CleanArch.Domain.Tests\CleanArch.Domain.Tests.csproj", "{297FD570-4186-426C-B094-753A99950200}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{B8D0750D-DC29-4BC4-979E-FDE4B41F485A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infra", "2 - Infra", "{9D0FAB4D-1CAD-409D-BB35-52BDC538A747}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{D914D219-7BF7-40F3-B442-068A3CEA0E1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{06F3DB71-7C9B-44A3-B1DC-8A3036912E3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DA1782DB-73B4-4AF3-B58D-3E7A0957AF76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +58,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{51FD4392-3904-4693-8E19-9E8B68C185A6} = {B8D0750D-DC29-4BC4-979E-FDE4B41F485A}
+		{FDDB88C7-5C18-433B-9930-28645B5957F5} = {06F3DB71-7C9B-44A3-B1DC-8A3036912E3C}
+		{524D0C8A-1682-4D38-A769-801A92D2B875} = {D914D219-7BF7-40F3-B442-068A3CEA0E1E}
+		{BB67BF05-0C0C-4527-9CFA-5FD0919C8878} = {9D0FAB4D-1CAD-409D-BB35-52BDC538A747}
+		{3B41209E-3886-46E1-8552-88078EC91574} = {9D0FAB4D-1CAD-409D-BB35-52BDC538A747}
+		{297FD570-4186-426C-B094-753A99950200} = {DA1782DB-73B4-4AF3-B58D-3E7A0957AF76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A20ADDF0-3701-44CC-A04F-2807BD17FCD1}
