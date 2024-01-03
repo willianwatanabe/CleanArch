@@ -31,6 +31,7 @@ namespace CleanArch.Infra.IoC
             services.AddScoped<ICategoryServices, CategoryServices>();
 
             services.AddAutoMapper(typeof(MappingProfile));
+            services.AddAutoMapper(typeof(DTOToCommandMappingProfile));
 
             var myhandlers = AppDomain.CurrentDomain.Load("CleanArch.Application");
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(myhandlers));
