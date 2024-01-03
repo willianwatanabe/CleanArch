@@ -7,11 +7,13 @@ using CleanArch.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace CleanArch.Infra.IoC
 {
@@ -29,6 +31,9 @@ namespace CleanArch.Infra.IoC
             services.AddScoped<ICategoryServices, CategoryServices>();
 
             services.AddAutoMapper(typeof(MappingProfile));
+
+            var myhandlers = AppDomain.CurrentDomain.Load("CleanArch.Application");
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(myhandlers));
 
             return services;
         }
