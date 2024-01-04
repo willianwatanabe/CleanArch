@@ -1,4 +1,5 @@
-﻿using CleanArch.Application.Interfaces;
+﻿using CleanArch.Application.DTOs;
+using CleanArch.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CleanArch.Controllers
@@ -17,6 +18,24 @@ namespace CleanArch.Controllers
         {
             var categories = await _categoryServices.GetCategoriesAsync();
             return View(categories);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(CategoryDTO category)
+        {
+            if(ModelState.IsValid)
+            {
+                await _categoryServices.AddAsync(category);
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View();
         }
     }
 }
