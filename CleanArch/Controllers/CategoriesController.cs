@@ -81,13 +81,23 @@ namespace CleanArch.Controllers
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int? id)
         {
-            if (ModelState.IsValid)
-            {
                 await _categoryServices.RemoveAsync(id.Value);
                 return RedirectToAction(nameof(Index));
-            }
+        }
 
-            return View();
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id is null)
+                return NotFound();
+
+            var category = await _categoryServices.GetByIdAsync(id.Value);
+
+            if (category is null)
+                return NotFound();
+
+            return View(category);
         }
     }
 }
