@@ -71,5 +71,23 @@ namespace CleanArch.Controllers
             return View();
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id is null)
+                return NotFound();
+
+            var productDTO = await _productServices.GetByIdAsync(id.Value);
+
+            return View(productDTO);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await _productServices.RemoveAsync(id);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
